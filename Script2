@@ -1,14 +1,13 @@
-const restaurante = "Sabor da Casa"; // precisa ser igual ao campo "restaurante" cadastrado na API
+const restaurante = "Sabor da Casa";
 const apiUrl = "https://tech4produtos.fly.dev/produtos";
 const lista = document.getElementById("lista-produtos");
 const mensagem = document.getElementById("mensagem");
 
-// GET: busca os produtos do restaurante
 const buscarProdutos = async () => {
     const nome = encodeURIComponent(restaurante);
     const urls = [
-        `${apiUrl}/restaurante=${nome}`, // formato do enunciado
-        `${apiUrl}?restaurante=${nome}`  // formato padrão de filtro, caso o primeiro não retorne nada
+        `${apiUrl}/restaurante=${nome}`, 
+        `${apiUrl}?restaurante=${nome}`  
     ];
 
     for (const url of urls) {
