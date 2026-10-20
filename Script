@@ -1,7 +1,6 @@
 const contador = document.getElementById("contador");
 const oferta = document.getElementById("oferta");
 
-// Meia-noite do dia em que o visitante entrou no site
 const fim = new Date();
 fim.setHours(24, 0, 0, 0);
 
