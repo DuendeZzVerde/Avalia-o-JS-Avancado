@@ -1,0 +1,62 @@
+const restaurante = "Sabor da Casa"; // precisa ser igual ao campo "restaurante" cadastrado na API
+const apiUrl = "https://tech4produtos.fly.dev/produtos";
+const lista = document.getElementById("lista-produtos");
+const mensagem = document.getElementById("mensagem");
+
+// GET: busca os produtos do restaurante
+const buscarProdutos = async () => {
+    const nome = encodeURIComponent(restaurante);
+    const urls = [
+        `${apiUrl}/restaurante=${nome}`, // formato do enunciado
+        `${apiUrl}?restaurante=${nome}`  // formato padrão de filtro, caso o primeiro não retorne nada
+    ];
+
+    for (const url of urls) {
+        try {
+            const resposta = await fetch(url);
+            if (!resposta.ok) continue;
+            const dados = await resposta.json();
+            if (Array.isArray(dados) && dados.length > 0) return dados;
+        } catch (erro) {
+            console.error("Erro ao consultar", url, erro);
+        }
+    }
+    return [];
+};
+
+const criarCard = produto => {
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = `detalhes.html?id=${encodeURIComponent(produto.id)}`;
+
+    card.innerHTML = `
+        <div class="card-img"><img></div>
+        <div class="card-info">
+            <span class="tag"></span>
+            <h3></h3>
+            <p></p>
+        </div>`;
+
+    const img = card.querySelector("img");
+    img.src = produto.imagem;
+    img.alt = produto.nome;
+    card.querySelector(".tag").textContent = produto.produto;
+    card.querySelector("h3").textContent = produto.nome;
+    card.querySelector("p").textContent = produto.descricao;
+
+    return card;
+};
+
+const exibirProdutos = async () => {
+    const produtos = await buscarProdutos();
+
+    if (produtos.length === 0) {
+        mensagem.innerText = "Não encontramos produtos agora. Verifique a API e tente novamente.";
+        return;
+    }
+
+    mensagem.innerText = "";
+    produtos.forEach(produto => lista.appendChild(criarCard(produto)));
+};
+
+exibirProdutos();
