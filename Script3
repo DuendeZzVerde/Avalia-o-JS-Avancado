@@ -2,10 +2,8 @@ const apiUrl = "https://tech4produtos.fly.dev/produtos";
 const detalhe = document.getElementById("detalhe-produto");
 const mensagem = document.getElementById("mensagem");
 
-// Lê o id que veio na URL: detalhes.html?id=123
 const id = new URLSearchParams(window.location.search).get("id");
 
-// GET: busca um produto pelo id
 const buscarPorId = async id => {
     const resposta = await fetch(`${apiUrl}/${encodeURIComponent(id)}`);
     if (!resposta.ok) throw new Error("Produto não encontrado");
