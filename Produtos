@@ -1,0 +1,44 @@
+[
+  {
+    "nome": "Lasanha à Bolonhesa",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://depositphotos.com/br/photos/lasanha.html",
+    "produto": "Prato principal",
+    "descricao": "Massa fresca, molho de carne cozido por horas e queijo gratinado."
+  },
+  {
+    "nome": "Filé com Fritas",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://app.cardapiodigital.net/omachadao/petiscos-/5517-file-com-fritas.html",
+    "produto": "Prato principal",
+    "descricao": "Filé mignon grelhado no ponto, com batatas fritas crocantes."
+  },
+  {
+    "nome": "Petit Gâteau",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://www.receitasnestle.com.br/receitas/petit-gateau-de-chocolate-classic",
+    "produto": "Sobremesa",
+    "descricao": "Bolinho de chocolate com centro cremoso e sorvete de creme."
+  },
+  {
+    "nome": "Salada Caprese",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://www.tudogostoso.com.br/receita/131157-salada-caprese.html",
+    "produto": "Entrada",
+    "descricao": "Tomate, muçarela de búfala, manjericão e azeite."
+  },
+  {
+    "nome": "Suco de Laranja",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://pt.pinterest.com/ideas/foto-de-suco-de-laranja/919001530709/",
+    "produto": "Bebida",
+    "descricao": "Laranja espremida na hora, sem açúcar."
+  },
+  {
+    "nome": "Pizza Margherita",
+    "restaurante": "Sabor da Casa",
+    "imagem": "https://depositphotos.com/br/photos/pizza-margarita.html",
+    "produto": "Prato principal",
+    "descricao": "Molho de tomate, muçarela e manjericão fresco em massa fina."
+  }
+]
