@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Sabor da Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="index.html" class="logo">Sabor da Casa</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="ativo">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="detalhes.html">Detalhes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destaque">
+            <h1>Sabor da Casa</h1>
+            <p>Cozinha caseira feita com ingredientes frescos, receitas de família e tempo de panela. Venha comer como em casa.</p>
+            <a href="cardapio.html" class="botao">Ver Cardápio</a>
+            <p class="oferta" id="oferta">As ofertas exclusivas terminam em: <span id="contador">--:--:--</span></p>
+        </section>
+
+        <section class="pratos">
+            <h2>Pratos em destaque</h2>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-img"><img src="https://loremflickr.com/640/420/lasagna" alt="Lasanha à bolonhesa"></div>
+                    <div class="card-info">
+                        <h3>Lasanha à Bolonhesa</h3>
+                        <p>Massa fresca, molho de carne cozido por horas e queijo gratinado.</p>
+                        <span class="cheio">&starf; &starf; &starf; &starf; &starf;</span>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img"><img src="https://loremflickr.com/640/420/steak" alt="Filé com fritas"></div>
+                    <div class="card-info">
+                        <h3>Filé com Fritas</h3>
+                        <p>Filé mignon grelhado no ponto, com batatas fritas crocantes.</p>
+                        <span class="cheio">&starf; &starf; &starf; &starf;</span><span class="vazio">&star;</span>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img"><img src="https://loremflickr.com/640/420/dessert,cake" alt="Petit gâteau"></div>
+                    <div class="card-info">
+                        <h3>Petit Gâteau</h3>
+                        <p>Bolinho de chocolate com centro cremoso e sorvete de creme.</p>
+                        <span class="cheio">&starf; &starf; &starf; &starf; &starf;</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 Sabor da Casa</footer>
+    <script src="index.js"></script>
+</body>
+</html>
