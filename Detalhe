@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes | Sabor da Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="index.html" class="logo">Sabor da Casa</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="detalhes.html" class="ativo">Detalhes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p id="mensagem" class="mensagem">Carregando produto...</p>
+        <section class="detalhe" id="detalhe-produto" hidden></section>
+    </main>
+
+    <footer>&copy; 2026 Sabor da Casa</footer>
+    <script src="detalhes.js"></script>
+</body>
+</html>
