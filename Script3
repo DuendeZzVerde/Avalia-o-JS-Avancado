@@ -1,0 +1,52 @@
+const apiUrl = "https://tech4produtos.fly.dev/produtos";
+const detalhe = document.getElementById("detalhe-produto");
+const mensagem = document.getElementById("mensagem");
+
+// Lê o id que veio na URL: detalhes.html?id=123
+const id = new URLSearchParams(window.location.search).get("id");
+
+// GET: busca um produto pelo id
+const buscarPorId = async id => {
+    const resposta = await fetch(`${apiUrl}/${encodeURIComponent(id)}`);
+    if (!resposta.ok) throw new Error("Produto não encontrado");
+    return await resposta.json();
+};
+
+const exibirDetalhe = produto => {
+    detalhe.innerHTML = `
+        <img>
+        <div class="detalhe-info">
+            <span class="tag"></span>
+            <h1></h1>
+            <p class="origem"></p>
+            <p class="descricao"></p>
+            <a href="cardapio.html" class="botao">Voltar ao cardápio</a>
+        </div>`;
+
+    const img = detalhe.querySelector("img");
+    img.src = produto.imagem;
+    img.alt = produto.nome;
+    detalhe.querySelector(".tag").textContent = produto.produto;
+    detalhe.querySelector("h1").textContent = produto.nome;
+    detalhe.querySelector(".origem").textContent = `Servido em: ${produto.restaurante}`;
+    detalhe.querySelector(".descricao").textContent = produto.descricao;
+    detalhe.hidden = false;
+};
+
+const carregar = async () => {
+    if (!id) {
+        mensagem.innerText = "Nenhum produto selecionado. Escolha um prato no cardápio.";
+        return;
+    }
+
+    try {
+        const produto = await buscarPorId(id);
+        mensagem.innerText = "";
+        exibirDetalhe(produto);
+    } catch (erro) {
+        console.error(erro);
+        mensagem.innerText = "Não foi possível carregar este produto.";
+    }
+};
+
+carregar();
