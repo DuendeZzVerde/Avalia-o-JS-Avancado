@@ -1,0 +1,29 @@
+const contador = document.getElementById("contador");
+const oferta = document.getElementById("oferta");
+
+// Meia-noite do dia em que o visitante entrou no site
+const fim = new Date();
+fim.setHours(24, 0, 0, 0);
+
+let intervalo = null;
+
+const doisDigitos = numero => String(numero).padStart(2, "0");
+
+const atualizarContador = () => {
+    const restante = fim - new Date();
+
+    if (restante <= 0) {
+        oferta.innerText = "As ofertas exclusivas terminaram.";
+        clearInterval(intervalo);
+        return;
+    }
+
+    const horas = Math.floor(restante / 3600000);
+    const minutos = Math.floor((restante % 3600000) / 60000);
+    const segundos = Math.floor((restante % 60000) / 1000);
+
+    contador.innerText = `${doisDigitos(horas)}:${doisDigitos(minutos)}:${doisDigitos(segundos)}`;
+};
+
+atualizarContador();
+intervalo = setInterval(atualizarContador, 1000);
