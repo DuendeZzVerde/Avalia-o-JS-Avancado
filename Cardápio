@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Sabor da Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="index.html" class="logo">Sabor da Casa</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html" class="ativo">Cardápio</a></li>
+                <li><a href="detalhes.html">Detalhes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cardapio">
+            <h1>Cardápio</h1>
+            <p id="mensagem" class="mensagem">Carregando pratos...</p>
+            <div class="cards" id="lista-produtos"></div>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 Sabor da Casa</footer>
+    <script src="cardapio.js"></script>
+</body>
+</html>
