@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap');
+
+:root{
+    --vinho: #3b0d1a;
+    --vinho-escuro: #26070f;
+    --ouro: #f2b134;
+    --creme: #fff4e0;
+    --texto-suave: #e9d3c0;
+}
+
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+body{
+    font-family: 'Nunito', Arial, sans-serif;
+    background-color: var(--vinho);
+    background-image: linear-gradient(rgba(38,7,15,.82), rgba(38,7,15,.92)),
+                      url('https://loremflickr.com/1600/900/restaurant,dinner');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--creme);
+    line-height: 1.6;
+}
+
+.topo{
+    background-color: var(--vinho-escuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid var(--ouro);
+}
+
+.logo{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--creme);
+    text-shadow: 3px 3px 6px rgba(0,0,0,.7);
+    text-decoration: none;
+}
+
+.logo::first-letter{ color: var(--ouro); }
+
+.menu{
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a{
+    color: var(--creme);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: .3s;
+}
+
+.menu a:hover,
+.menu a.ativo{
+    color: var(--ouro);
+    border-bottom-color: var(--ouro);
+}
+
+a:focus-visible, button:focus-visible{
+    outline: 3px solid var(--ouro);
+    outline-offset: 3px;
+}
+
+.destaque{
+    text-align: center;
+    padding: 110px 20px 90px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.destaque h1{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    text-shadow: 3px 3px 8px rgba(0,0,0,.6);
+    margin-bottom: 18px;
+}
+
+.destaque p{
+    font-size: 1.2rem;
+    color: var(--texto-suave);
+    margin-bottom: 34px;
+}
+
+.botao{
+    display: inline-block;
+    background-color: var(--ouro);
+    color: var(--vinho-escuro);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 14px 34px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,.45);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background-color: var(--creme);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 22px rgba(0,0,0,.55);
+}
+
+.pratos{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 90px;
+}
+
+.pratos h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 36px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+}
+
+.cards{
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+}
+
+.card{
+    background-color: var(--vinho-escuro);
+    border: 1px solid rgba(242,177,52,.35);
+    border-radius: 14px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.5);
+    transition: .3s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0,0,0,.65);
+    border-color: var(--ouro);
+}
+
+.card img{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    background-color: #5a1c2c;
+    transition: .4s;
+}
+
+.card:hover img{ transform: scale(1.06); }
+
+.card-img{ overflow: hidden; }
+
+.card-info{ padding: 20px; }
+
+.card-info h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.card-info p{
+    color: var(--texto-suave);
+    font-size: .95rem;
+    margin-bottom: 12px;
+}
+
+.cheio{ color: var(--ouro); }
+.vazio{ color: #8a6a5c; }
+
+.pagina{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.pagina h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,.6);
+}
+
+.pagina p{ color: var(--texto-suave); }
+
+footer{
+    background-color: var(--vinho-escuro);
+    text-align: center;
+    padding: 20px;
+    color: var(--texto-suave);
+    font-size: .9rem;
+}
+
+@media (max-width: 768px){
+    .topo{ flex-direction: column; gap: 12px; padding: 16px; }
+    .menu{ gap: 18px; }
+    .destaque{ padding: 70px 20px 60px; }
+    .cards{ flex-direction: column; align-items: center; }
+    .card{ width: 100%; max-width: 380px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; }
+}
+
+.oferta{
+    margin-top: 36px;
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+}
+
+.oferta span{
+    display: block;
+    margin-top: 6px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--ouro);
+    text-shadow: 2px 2px 6px rgba(0,0,0,.6);
+    font-variant-numeric: tabular-nums;
+}
+
+.cards{ flex-wrap: wrap; }
+
+a.card{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-info{ text-align: left; }
+
+.tag{
+    display: inline-block;
+    background-color: var(--ouro);
+    color: var(--vinho-escuro);
+    font-size: .75rem;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.cardapio{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px 90px;
+    text-align: center;
+}
+
+.cardapio h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,.6);
+}
+
+.mensagem{
+    text-align: center;
+    color: var(--texto-suave);
+    padding: 20px;
+}
+
+.detalhe{
+    display: flex;
+    max-width: 900px;
+    margin: 60px auto 90px;
+    background-color: var(--vinho-escuro);
+    border: 1px solid var(--ouro);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,.6);
+}
+
+.detalhe[hidden]{ display: none; }
+
+.detalhe img{
+    width: 50%;
+    object-fit: cover;
+    background-color: #5a1c2c;
+}
+
+.detalhe-info{
+    padding: 40px;
+    text-align: left;
+}
+
+.detalhe-info h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.detalhe-info .origem{
+    color: var(--ouro);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.detalhe-info .descricao{
+    color: var(--texto-suave);
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px){
+    .detalhe{ flex-direction: column; margin: 30px 16px 60px; }
+    .detalhe img{ width: 100%; height: 240px; }
+    .detalhe-info{ padding: 24px; }
+}
